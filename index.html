@@ -5,106 +5,181 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yuvraj Kapri | Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
-  <!-- AOS Animation CSS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    #contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+    .contact-wrapper {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(157, 0, 255, 0.25);
+      padding: 40px 30px;
+      margin-top: 30px;
+    }
+    #contact-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    #contact-form input,
+    #contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #e0e0ff;
+    }
+    #contact-form button {
+      background: linear-gradient(135deg, #9d00ff, #ff61ec);
+      color: white;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    #contact-form button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 97, 236, 0.4);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-          <div class="logo">Yuvraj Kapri</div>
-      
-          <button class="menu-toggle" id="menu-toggle">☰</button>
-      
-          <ul class="nav-links" id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><button id="theme-toggle">🌙 Toggle Theme</button></li>
-          </ul>
-        </nav>
-      
-        <a href="YuvrajKapri_Resume.pdf" download>📄 Download My Resume</a>
-      
-        <h1 data-aos="zoom-in">Hi, I’m Yuvraj Kapri</h1>
-      
-        <img src="assets/profile.jpg" alt="Yuvraj Kapri" class="profile-img" />
-      
-        <p>Aspiring Engineer | Blockchain, AI, Java</p>
-      </header>
-      
+  <div id="tsparticles"></div>
+  <header>
+    <nav class="navbar">
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="right-corner">
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </nav>
+    <div class="resume-container">
+      <a href="YuvrajKapri_Resume.pdf" download class="resume-button">📄 Download My Resume</a>
+    </div>
+    <h1 data-aos="zoom-in" class="intro-title">Hey, I’m Yuvraj 👋</h1>
+    <img src="assets/profile.jpg" alt="Yuvraj Kapri" class="profile-img" />
+    <p class="intro-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Crafting digital futures through code, creativity, and curiosity.<br />
+      Specializing in Blockchain, AI, and Full Stack Development.
+    </p>
+  </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m passionate about technology, books ,movies ,and building things that matter.</p>
+  <section id="about" data-aos="fade-up">
+    <h2 class="section-title">About Me</h2>
+    <p class="about-text">
+      I’m Yuvraj Kapri — a passionate engineer and creative thinker who thrives at the intersection of tech and storytelling.<br /><br />
+      Whether it’s building secure blockchain applications, training AI to make smarter decisions, or designing beautiful user experiences, I bring purpose, precision, and passion to every project I take on.<br /><br />
+      I’m also an avid learner, bookworm, and cinephile — inspired by the worlds of science, cinema, and code.
+    </p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
+  <section id="projects" data-aos="fade-right">
+    <h2 class="section-title">Projects</h2>
     <div class="project-container">
-      <div class="project-card">
+      <div class="project-card" data-aos="fade-up" data-aos-delay="0">
         <h3>🗳️ Online Voting DApp</h3>
         <p>A secure decentralized voting system using Solidity, Truffle, Ganache, and Web3.js.</p>
         <p><strong>Tech Stack:</strong> Solidity, Truffle, HTML, CSS, JS, Ethers.js</p>
-        <a href="https://github.com/YuvrajKapri/online-voting" target="_blank">GitHub</a>
+        <a href="https://github.com/bottle121user/voting-dapp.git" target="_blank">🔗 GitHub</a>
       </div>
-  
-      <div class="project-card">
-        <h3>💹 Crypto Matching Engine</h3>
-        <p>High-performance order-matching engine simulating REG NMS logic with multi-order types.</p>
-        <p><strong>Tech Stack:</strong> Java, REST APIs, Redis, FIX Protocol (planned)</p>
-        <a href="https://github.com/YuvrajKapri/matching-engine" target="_blank">GitHub</a>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>🤖 AI Resume Screening System</h3>
+        <p>Automated resume analysis tool using NLP & ML models to rank candidates based on job descriptions.</p>
+        <p><strong>Tech Stack:</strong> Python, Transformers, scikit-learn, Streamlit</p>
+        <a href="https://github.com/YuvrajKapri/ai-resume-screener" target="_blank">🔗 GitHub</a>
+      </div>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>🔐 Enterprise Password Manager</h3>
+        <p>Secure password management platform with encryption, master key vault, and role-based access control.</p>
+        <p><strong>Tech Stack:</strong> Node.js, Express, MongoDB, Crypto, React (Planned)</p>
+        <a href="https://github.com/YuvrajKapri/enterprise-password-manager" target="_blank">🔗 GitHub</a>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" name="user_name" placeholder="Your Name" required />
-      <input type="email" name="user_email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-      <p id="form-message"></p>
-    </form>
-  </section>
-  
-  
-  <section id="about" data-aos="fade-up">
-    ...
-  </section>
-  
-  <section id="projects" data-aos="fade-right">
-    ...
-  </section>
-  
-  <section id="resume" data-aos="fade-left">
-    ...
-  </section>
-  
   <section id="contact" data-aos="fade-up">
-    ...
+    <h2 class="section-title">Contact Me</h2>
+    <p class="contact-subtitle">Have an idea, opportunity, or just want to say hi? Let’s connect.</p>
+    <div class="contact-wrapper">
+      <form id="contact-form">
+        <input type="text" name="user_name" placeholder="Your Name" required />
+        <input type="email" name="user_email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="form-message"></p>
+      </form>
+    </div>
   </section>
-  
-  
-  <script src="script.js"></script>
+
   <footer>
     <p>© 2025 Yuvraj Kapri. All rights reserved.</p>
   </footer>
-  <!-- AOS Animation JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
 
-<!-- EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("_MOX2XVp2ztIk6EK2"); // Replace with your real key
-  })();
-</script>
-<script src="script.js"></script> <!-- Make sure this is after EmailJS -->
-
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("_MOX2XVp2ztIk6EK2");
+    })();
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="script.js"></script>
+  <script>
+    tsParticles.load("tsparticles", {
+      background: {
+        color: { value: "#1a1a2e" }
+      },
+      particles: {
+        number: { value: 30 },
+        color: { value: ["#9d00ff", "#ff61ec", "#ffffff"] },
+        shape: {
+          type: ["circle", "square", "triangle"]
+        },
+        opacity: {
+          value: 0.3,
+          random: true
+        },
+        size: {
+          value: 10,
+          random: { enable: true, minimumValue: 5 }
+        },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          random: true,
+          outModes: "out"
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: false },
+          onClick: { enable: false }
+        }
+      },
+      fullScreen: { enable: true, zIndex: -1 }
+    });
+  </script>
 </body>
 </html>
