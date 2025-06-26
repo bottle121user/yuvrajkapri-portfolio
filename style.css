@@ -1,9 +1,15 @@
+:root {
+    --bg-color: #0a192f;
+    --text-color: #ccd6f6;
+    --accent-color: #64ffda;
+    --card-color: #112240;
+  }
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0a192f;
-    color: #ccd6f6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
   
   header, section {
@@ -138,3 +144,126 @@ body {
     }
   }
   
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  #theme-toggle {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent-color);
+    color: #0a192f;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  #theme-toggle:hover {
+    background-color: #ffffff;
+  }
+  
+  header, footer {
+    background-color: var(--card-color);
+  }
+  
+  #theme-toggle {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  form input,
+  form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+  }
+  
+  form button {
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #00ffcc;
+  }
+  
+  #form-message {
+    font-size: 14px;
+    color: var(--text-color);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: var(--bg-color);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav-links li a, .nav-links li button {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Hamburger Button */
+  .menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+  
+  /* Responsive Nav */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 30px;
+      background-color: var(--bg-color);
+      padding: 20px;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px var(--shadow-color);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  }
